@@ -40,8 +40,13 @@ button {
   margin-bottom: 2px;
 }
 .title {
-  margin-left: 33%;;
+  margin-left: 33%;
+    
+  
 }
 .details-title {
   margin-left: 18%;
+}
+.title-container {
+  border-bottom: 1px solid black;
 }

@@ -10,10 +10,13 @@ email:yup
     .string()
     .email("Please enter a valid email")
     .required("Email is a required field!"),
+role:yup   
+    .string()
+    .oneOf(["Management", "Web-Design", "Sales", "Backend"], "Role is Required"),
 password:yup
     .string()
     .required("Please choose a password"),
-terms:yup.boolean()
+terms:yup.boolean().required("You gotta accept these terms, my friend")
 
 
 })

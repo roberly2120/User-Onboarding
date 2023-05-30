@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Form (props) {
-    const { values, change, submit, errors } = props
+    const { values, change, submit, errors, disabled } = props
 
     const onSubmit = event => {
         event.preventDefault();
@@ -19,9 +19,10 @@ export default function Form (props) {
                 <div>{errors.name}</div>
                 <div>{errors.email}</div>
                 <div>{errors.password}</div>
+                <div>{errors.emailTaken}</div>
             </div>
             <div className='user-input'>
-                <label>Name  
+                <label>Name:  
                     <input
                         value={values.name} 
                         type='text'
@@ -30,7 +31,7 @@ export default function Form (props) {
                         onChange={onChange}
                     />             
                 </label>
-                <label>Email
+                <label>Email:
                     <input
                         value={values.email}
                         type="text"
@@ -39,7 +40,18 @@ export default function Form (props) {
                         onChange={onChange}
                     />
                 </label>
-                <label>Password
+                <label>Role:
+                    <select value={values.role} name='role' onChange={onChange}>
+                        <option value=""> - Select Role - </option>
+                        <option value="Management">Management</option>
+                        <option value="Web-Design">Web Design</option>
+                        <option value="Sales">Sales</option>
+                        <option value="Backend">Backend</option>
+                    </select>
+                        
+
+                </label>
+                <label>Password:&nbsp;
                     <input
                         value={values.password}
                         type="text"
@@ -56,7 +68,7 @@ export default function Form (props) {
                         onChange={onChange}
                     />
                 </label>
-                <button>submit</button>
+                <button disabled={disabled}>submit</button>
 
             </div>
         </form>
